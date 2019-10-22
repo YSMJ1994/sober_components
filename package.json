@@ -1,0 +1,27 @@
+{
+  "name": "sober_components",
+  "version": "0.1.0",
+  "private": true,
+  "license": "MIT",
+  "scripts": {
+    "start": "react-ui-scripts start",
+    "build": "react-ui-scripts build",
+    "build-doc": "react-ui-scripts build-doc",
+    "build-library": "react-ui-scripts build-library"
+  },
+  "dependencies": {
+    "react-ui-scripts": "^0.1.27"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  }
+}

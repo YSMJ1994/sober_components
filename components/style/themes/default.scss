@@ -1,0 +1,31 @@
+@charset "UTF-8";
+@import "../colors/index";
+
+/*Prefix class*/
+$prefix-cls: sc;
+
+/*Color*/
+$primary-color: $blue-6;
+$info-color: $blue-6;
+$success-color: $green-6;
+$warning-color: $yellow-6;
+$error-color: $red-6;
+$font-color-base: #5a5a5a;
+
+/*Border*/
+$border-color-base: #d9d9d9;
+$border-width-base: 1px; 
+$border-style-base: solid; 
+$border-base: $border-width-base $border-style-base $border-color-base;
+
+/*Disabled Color*/
+$disabled-color: rgba(0, 0, 0, 0.25);
+$disabled-bg-color: #f5f5f5;
+
+/*Size*/
+$font-size-mini: 12px;
+$font-size-small: 14px;
+$font-size-default: 16px;
+$font-size-large: 18px;
+$font-size-big: 22px;
+
