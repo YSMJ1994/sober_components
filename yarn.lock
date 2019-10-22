@@ -7870,10 +7870,10 @@ react-router@5.1.2:
     tiny-invariant "^1.0.2"
     tiny-warning "^1.0.0"
 
-react-ui-scripts@^0.1.27:
-  version "0.1.27"
-  resolved "https://registry.npmjs.org/react-ui-scripts/-/react-ui-scripts-0.1.27.tgz#e0eaf94152cd6a53d8a6a092214a7b30da66ef22"
-  integrity sha512-ufnQPk9Ve+7VmmUhNms7EecDQmjZ2HU7OpYqdW36Qub3lrPoMZGKXS+yg8JL5pYrzlmeH+v8vwMQRbTLswX6cA==
+react-ui-scripts@^0.1.28:
+  version "0.1.28"
+  resolved "https://registry.npmjs.org/react-ui-scripts/-/react-ui-scripts-0.1.28.tgz#1afc0f1f2d8464f7a25b1f1d302ad5e2dc159881"
+  integrity sha512-0ilkLfgAOsW4Jc4KPi7lFPuPfmvtYNHiMXTICjhRbKwjQURjwajQbsk2FGyi0+6hL2EmBksrkEvcRVS77JV0ug==
   dependencies:
     "@babel/core" "7.6.0"
     "@babel/preset-env" "7.6.0"

@@ -10,7 +10,7 @@
     "build-library": "react-ui-scripts build-library"
   },
   "dependencies": {
-    "react-ui-scripts": "^0.1.27"
+    "react-ui-scripts": "^0.1.28"
   },
   "browserslist": {
     "production": [

@@ -23,13 +23,15 @@ const CollapseBox: FC<PropsWithChildren<Props>> = ({
 }) => {
   const listRef = useRef<HTMLDivElement>(null);
   const [fullHeight, setFullHeight] = useState<number | "auto">("auto");
+
   useEffect(() => {
     if (!listRef.current) {
       return;
     }
     const dom = listRef.current;
     setFullHeight(dom.scrollHeight || "auto");
-  }, [children, listRef.current]);
+  }, [children]);
+
   const calcStyle = {
     ...style,
     height: show ? fullHeight : 0,
@@ -37,7 +39,11 @@ const CollapseBox: FC<PropsWithChildren<Props>> = ({
   };
   return (
     <div
-      className={cs(`${prefixCls}-collapse-box`, className)}
+      className={cs(
+        `${prefixCls}-collapse-box`,
+        `${prefixCls}-collapse-box--${show ? "show" : "hide"}`,
+        className
+      )}
       style={calcStyle}
       ref={listRef}
     >

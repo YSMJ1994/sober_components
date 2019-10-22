@@ -17,11 +17,12 @@
     "baseUrl": ".",
     "paths": {
       "toolSrc/*": ["node_modules/react-ui-scripts/src/*"],
-      "components/*": ["components/*"],
-      "sober_components": ["node_modules/react-ui-scripts/assets/components/comps.js"],
-      "sober_components/*": ["components/*"]
-    },
-    "declaration": true
+      "components/*": ["./components/*"],
+      "sober_components": [
+        "node_modules/react-ui-scripts/assets/components/comps.js"
+      ],
+      "sober_components/*": ["./components/*"]
+    }
   },
-  "include": ["components"]
+  "include": ["components/**/*", "node_modules/react-ui-scripts/**/*"]
 }
