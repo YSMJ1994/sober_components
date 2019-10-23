@@ -8,24 +8,29 @@ import React, {
 } from "react";
 import cs from "classnames";
 import { prefixCls } from "../common/variables";
-import { listenAndCallback } from "../utils";
 
 interface Props {
   show?: boolean;
   className?: string;
   style?: CSSProperties;
+  animated?: boolean;
 }
 
 const CollapseBox: FC<PropsWithChildren<Props>> = ({
   className,
   style,
   children,
-  show = false
+  show = false,
+  animated = true
 }) => {
   const listRef = useRef<HTMLDivElement>(null);
   const [height, setHeight] = useState<number | "auto">(show ? "auto" : 0);
-
+  
   useEffect(() => {
+    if (!animated) {
+      setHeight(show ? "auto" : 0);
+      return;
+    }
     if (!listRef.current) {
       return;
     }
@@ -52,14 +57,18 @@ const CollapseBox: FC<PropsWithChildren<Props>> = ({
       }
     }
   }, [listRef.current, show]);
-  
+
+  const animateStyle = {
+    opacity: show ? 1 : 0
+  };
   const calcStyle = {
     ...style,
     height: height,
-    opacity: show ? 1 : 0
+    ...(animated ? animateStyle : {})
   };
   return (
     <div
+      data-animated={animated}
       className={cs(
         `${prefixCls}-collapse-box`,
         `${prefixCls}-collapse-box--${show ? "show" : "hide"}`,
