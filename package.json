@@ -1,16 +1,20 @@
 {
   "name": "sober_components",
-  "version": "0.1.0",
-  "private": true,
+  "version": "0.1.5",
   "license": "MIT",
+  "author": {
+    "name": "soberz",
+    "email": "710411486@qq.com"
+  },
   "scripts": {
     "start": "react-ui-scripts start",
     "build": "react-ui-scripts build",
     "build-doc": "react-ui-scripts build-doc",
-    "build-library": "react-ui-scripts build-library"
+    "build-library": "react-ui-scripts build-library",
+    "publish-library": "cd build-library && git init && yarn publish"
   },
   "dependencies": {
-    "react-ui-scripts": "^0.1.28"
+    "react-ui-scripts": "^0.1.30"
   },
   "browserslist": {
     "production": [

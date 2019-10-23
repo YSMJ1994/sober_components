@@ -8,6 +8,7 @@ import React, {
 } from "react";
 import cs from "classnames";
 import { prefixCls } from "../common/variables";
+import { listenAndCallback } from "../utils";
 
 interface Props {
   show?: boolean;
@@ -22,19 +23,39 @@ const CollapseBox: FC<PropsWithChildren<Props>> = ({
   show = false
 }) => {
   const listRef = useRef<HTMLDivElement>(null);
-  const [fullHeight, setFullHeight] = useState<number | "auto">("auto");
+  const [height, setHeight] = useState<number | "auto">(show ? "auto" : 0);
 
   useEffect(() => {
     if (!listRef.current) {
       return;
     }
-    const dom = listRef.current;
-    setFullHeight(dom.scrollHeight || "auto");
-  }, [children]);
-
+    // 计算高度
+    const fullHeight = listRef.current.scrollHeight;
+    if (show) {
+      // 展开
+      setHeight(fullHeight);
+      const timeout = setTimeout(() => {
+        setHeight("auto");
+      }, 220);
+      return () => {
+        clearTimeout(timeout);
+      };
+    } else {
+      // 折叠
+      if (height === "auto") {
+        setHeight(fullHeight);
+        setTimeout(() => {
+          setHeight(0);
+        }, 20);
+      } else {
+        setHeight(0);
+      }
+    }
+  }, [listRef.current, show]);
+  
   const calcStyle = {
     ...style,
-    height: show ? fullHeight : 0,
+    height: height,
     opacity: show ? 1 : 0
   };
   return (
