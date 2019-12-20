@@ -1,22 +1,15 @@
-import React, {
-  useState,
-  useEffect,
-  useRef,
-  CSSProperties,
-  FC,
-  PropsWithChildren
-} from "react";
+import React, { useState, useEffect, useRef, CSSProperties, FC } from "react";
 import cs from "classnames";
 import { prefixCls } from "../common/variables";
 
-interface Props {
+interface CollapseProps {
   show?: boolean;
   className?: string;
   style?: CSSProperties;
   animated?: boolean;
 }
 
-const CollapseBox: FC<PropsWithChildren<Props>> = ({
+const CollapseBox: FC<CollapseProps> = ({
   className,
   style,
   children,
@@ -25,7 +18,7 @@ const CollapseBox: FC<PropsWithChildren<Props>> = ({
 }) => {
   const listRef = useRef<HTMLDivElement>(null);
   const [height, setHeight] = useState<number | "auto">(show ? "auto" : 0);
-  
+
   useEffect(() => {
     if (!animated) {
       setHeight(show ? "auto" : 0);
