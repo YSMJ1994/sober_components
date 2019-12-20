@@ -1,6 +1,6 @@
 {
-  "name": "sober_components",
-  "version": "0.1.5",
+  "name": "@ysmj/react-ui",
+  "version": "1.0.0",
   "license": "MIT",
   "author": {
     "name": "soberz",
@@ -11,7 +11,7 @@
     "build": "react-ui-scripts build",
     "build-doc": "react-ui-scripts build-doc",
     "build-library": "react-ui-scripts build-library",
-    "publish-library": "cd build-library && git init && yarn publish"
+    "publish-library": "cd build-library && git init && yarn publish --access public"
   },
   "dependencies": {
     "react-ui-scripts": "^0.1.30"
